@@ -66,13 +66,7 @@ public class Login {
         loginform.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         loginform.setVisible(true);
         
-        
-        
-    }/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+  {    
 package login;
 import java.awt.Color;
 import javax.swing.*;
@@ -97,8 +91,41 @@ public class adduserImpl extends adduser {
     JTextField age=new JTextField();
     myframe.setVisible(true}
    
-}
+   
+   import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+/**
+ *
+ * @author 110899
+ */
+public class database {
+    public static void main(String[]args){
+        try { 
+            Connection conn=DriverManager.getConnection("jdbc:derby://localhost:1527/sample [app on APP]");
+                    System.out.println("Connection Established");
+                    Statement st=conn.createStatement();
+                    ResultSet rs=st.executeQuery("Select * from  user");
+                            while(rs.next())
+                            {
+                                System.out.print(rs.getString(1));
+                                System.out.print(rs.getString(2));
+                                System.out.print(rs.getString(3));
+                                System.out.print(rs.getString(4));                           
 
-    {
-}
+                            }      
+        } catch(Exception e){
+                            
+                            
+                            System.out.print("Error");
+                            }
+            
+        }
+    }
+    
+    
+
+
+  
 
